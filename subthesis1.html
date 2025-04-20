@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grief and Memory - Suzume</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('images/sub1img.jpg') no-repeat center center fixed;
+      background-size: cover;
+      background-color: black;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      z-index: 1001;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .character-section {
+      width: 95%;
+      margin: 50px auto;
+    }
+
+    .frosted-glass {
+      opacity: 0;
+      transform: translateY(30px);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 30px auto;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .frosted-glass.animate {
+      animation: fadeInSmooth 3s ease forwards;
+    }
+
+    .frosted-glass:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 35px rgba(255, 204, 0, 0.3);
+    }
+
+    @keyframes fadeInSmooth {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+      }
+      50% {
+        opacity: 0.6;
+        transform: translateY(10px) scale(1.01);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .frosted-glass h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: black;
+      position: relative;
+    }
+
+    .frosted-glass h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      margin: 8px auto 0;
+      background: #ffd54f;
+      border-radius: 2px;
+    }
+
+    .frosted-glass p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: black;
+      text-align: left;
+    }
+
+    .gif-box {
+      margin-top: 2rem;
+    }
+
+    .gif-box img {
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeInGif 2s ease;
+    }
+
+    @keyframes fadeInGif {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Suzume</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li class="dropdown">
+        <a href="thesis.html">Thesis Statement ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="subthesis1.html">Grief and Memory</a></li>
+          <li><a href="subthesis2.html">Ambiguity and Pacing</a></li>
+          <li><a href="subthesis3.html">Acceptance and Healing</a></li>
+        </ul>
+      </li>
+      <li><a href="characters.html">Characters</a></li>
+    </ul>
+  </nav>
+
+  <div class="character-section">
+    <div class="frosted-glass" id="fadeGlass">
+      <h2>Grief and Memory</h2>
+      <p>
+        The first subthesis evidence from <em>Suzume</em> comes from 1:35:00 when Suzume returns to the ruins of her childhood home and enters the Ever After. There she says to her younger self:<br><br>
+        <em>“You must have been so lonely... I’m sorry I left you behind. But it’s okay now. You’re not alone anymore. I’m here.”</em><br><br>
+        In this scene, Suzume literally returns to the site of her greatest trauma, the ruins of her childhood home destroyed by the earthquake and meets her younger self. This symbolic encounter allows her to confront the grief she has suppressed for years. By comforting her younger self, she accepts the loss of her mother and recognizes that the pain will always be part of her, but it doesn't have to define her. This scene is also filled with emotional visuals with broken structures and Ever After shown as a dreamlike space.<br><br>
+        This relates to the thesis statement because even though this scene represents where the tragedy begins, Suzume finds closure by returning and coming to peace with whatever happened in the past. This supports the thesis because it shows how Suzume learns to live with her grief, recognizing that while the pain of loss remains, it doesn’t have to control her future. It’s a clear turning point toward emotional closure and healing.
+      </p>
+      <div class="gif-box">
+        <img src="images/sub1.gif" alt="Suzume comforting her younger self">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      document.getElementById('fadeGlass').classList.add('animate');
+    };
+  </script>
+</body>
+</html>

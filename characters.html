@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suzume Characters</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('images/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      z-index: 1001;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .character-section {
+      width: 95%;
+      margin: 50px auto;
+    }
+
+    .frosted-glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 30px auto;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .character {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .character.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .character-image {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 15px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .character-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      display: block;
+    }
+
+    .character-info {
+      flex: 1;
+    }
+
+    .character-info h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+      color: black;
+    }
+
+    .character-info p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: black;
+    }
+
+    .fireworks-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Suzume</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li class="dropdown">
+        <a href="thesis.html">Thesis Statement ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="subthesis1.html">Grief and Memory</a></li>
+          <li><a href="subthesis2.html">Ambiguity and Pacing</a></li>
+          <li><a href="subthesis3.html">Acceptance and Healing</a></li>
+        </ul>
+      </li>
+      <li><a href="characters.html">Characters</a></li>
+    </ul>
+  </nav>
+
+  <div class="character-section">
+    <div class="frosted-glass">
+        <div class="character">
+          <div class="character-image">
+            <img src="images/suzume.jpg" alt="Suzume Iwato" />
+            <canvas class="fireworks-canvas"></canvas>
+          </div>
+          <div class="character-info">
+            <h2>Suzume Iwato</h2>
+            <p>Suzume Iwato is the spirited and compassionate protagonist of <em>Suzume</em>. She lives in a quiet rural town with her aunt, Tamaki, and is haunted by the loss of her mother during a major disaster when she was young. Despite her cheerful exterior, Suzume struggles with feelings of grief, isolation, and a longing for meaning beyond her small-town life. Her chance encounter with Souta sets her on an unforgettable journey across Japan, closing mysterious doors that threaten to unleash catastrophe. As the story unfolds, Suzume not only confronts supernatural forces, but also the emotional weight of her past, ultimately gaining the strength to shape her own future. She represents resilience, empathy, and the healing power of memory and connection.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="frosted-glass">
+        <div class="character reverse">
+          <div class="character-image">
+            <img src="images/souta.jpg" alt="Souta Munakata" />
+            <canvas class="fireworks-canvas"></canvas>
+          </div>
+          <div class="character-info">
+            <h2>Souta Munakata</h2>
+            <p>Souta Munakata is a calm, determined, and selfless young man who carries the solemn duty of being a “Closer”, someone tasked with sealing doors that connect the physical world to the afterlife, preventing natural disasters from breaking through. His life is steeped in spiritual tradition, and though he appears stoic at first, Souta is deeply empathetic and courageous. After being transformed into a three-legged children’s chair, a form linked to Suzume’s past, he continues his mission alongside her, despite the physical and emotional challenges. Throughout their journey, Souta's quiet strength and unwavering resolve offer balance to Suzume’s fiery spirit. As they grow closer, his personal struggles with fate, sacrifice, and responsibility unfold, revealing a layered character shaped by duty, legacy, and quiet hope.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="frosted-glass">
+        <div class="character">
+          <div class="character-image">
+            <img src="images/daijin.jpg" alt="Daijin" />
+            <canvas class="fireworks-canvas"></canvas>
+          </div>
+          <div class="character-info">
+            <h2>Daijin</h2>
+            <p>Daijin is a small, white, cat-like keystone spirit with a playful and mischievous personality that belies his deeper significance. At first, he appears to be a trickster, speaking in short, cryptic messages and seemingly causing chaos by relinquishing his role as a keystone. However, as the story progresses, it becomes clear that Daijin acts with intention, pushing Suzume and Souta onto a path of growth, remembrance, and healing. His actions reflect the tension between personal desire and duty, as he seeks connection and love while understanding the immense responsibility placed upon him. Daijin symbolizes the blurred boundary between the human and spiritual worlds, and his childlike demeanor masks profound emotional depth. He becomes both a guide and a mirror for Suzume, representing themes of innocence, memory, sacrifice, and the unseen forces that shape our lives.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="frosted-glass">
+        <div class="character reverse">
+          <div class="character-image">
+            <img src="images/tamaki.jpg" alt="Tamaki Iwato" />
+            <canvas class="fireworks-canvas"></canvas>
+          </div>
+          <div class="character-info">
+            <h2>Tamaki Iwato</h2>
+            <p>Tamaki Iwato is Suzume’s aunt and guardian, a hardworking woman who has dedicated her life to raising her niece after the tragic loss of Suzume’s mother. Juggling a demanding job and the emotional challenges of parenthood, Tamaki often masks her love and worry with a strict, practical demeanor. While she initially appears as a secondary character, her role becomes increasingly important as the story explores themes of sacrifice, communication, and unspoken emotional burdens. Tamaki’s relationship with Suzume is layered, a mix of deep care, frustration, and fear of being left behind. Through their conflict and eventual reconciliation, the film sheds light on the generational impact of trauma and the silent strength of those who take on parental roles out of love and duty. Tamaki represents the emotional anchor of Suzume’s journey, a reminder of the everyday heroes who hold families together in the aftermath of disaster.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.character-image').forEach(container => {
+      const canvas = container.querySelector('.fireworks-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let animating = false;
+
+      function createFirework(x, y) {
+        for (let i = 0; i < 80; i++) {
+          particles.push({
+            x, y,
+            radius: Math.random() * 4 + 2,
+            color: `hsl(${Math.random() * 360}, 100%, 60%)`,
+            angle: Math.random() * Math.PI * 2,
+            speed: Math.random() * 6 + 2,
+            alpha: 1
+          });
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p, i) => {
+          p.x += Math.cos(p.angle) * p.speed;
+          p.y += Math.sin(p.angle) * p.speed;
+          p.alpha -= 0.015;
+          if (p.alpha <= 0) particles.splice(i, 1);
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = p.alpha;
+          ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+
+        if (particles.length > 0) {
+          requestAnimationFrame(animate);
+        } else {
+          animating = false;
+        }
+      }
+
+      container.addEventListener('mouseenter', () => {
+        if (!animating) {
+          canvas.width = container.offsetWidth;
+          canvas.height = container.offsetHeight;
+          createFirework(canvas.width / 2, canvas.height / 2);
+          animating = true;
+          animate();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

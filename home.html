@@ -2,29 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anime Project</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anime Project - Home</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('images/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+    }
 
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dropdown menu styles */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      z-index: 1001;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      max-width: 700px;
+      width: 90%;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease forwards;
+      color: black;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: black;
+      animation: fadeInUp 1.3s ease forwards;
+    }
+
+    .hero a.button {
+      padding: 0.75rem 2rem;
+      background: #ffcc00;
+      color: #111;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1.5s ease forwards;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero a.button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">MySite</div>
-        <ul class="nav-links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+  <nav class="navbar">
+    <div class="logo">Suzume</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li class="dropdown">
+        <a href="thesis.html">Thesis Statement ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="subthesis1.html">Grief and Memory</a></li>
+          <li><a href="subthesis2.html">Ambiguity and Pacing</a></li>
+          <li><a href="subthesis3.html">Acceptance and Healing</a></li>
         </ul>
-    </nav>
+      </li>
+      <li><a href="characters.html">Characters</a></li>
+    </ul>
+  </nav>
 
-  <section class="intro-box">
-        <h2>Welcome!</h2>
-        <p>
-            Hi, I'm [Your Name]! This is a brief introduction about me or this site.
-            Feel free to explore the links above to learn more.
-        </p>
-    </section>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Anime Project</h1>
+      <p>This website explores the characters, themes, and meanings behind the anime film <em>Suzume</em>. Dive into the world of storytelling, emotion, and visual art.</p>
 
+      <!-- Thesis Statement Button -->
+      <a href="thesis.html" class="button">Thesis Statement</a><br>
+
+      <!-- Meet the Characters Button -->
+      <a href="characters.html" class="button">Meet the Characters</a>
+    </div>
+  </section>
 </body>
 </html>
