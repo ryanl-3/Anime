@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artistic Media - Suzume</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('images/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      z-index: 1001;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .media-section {
+      padding: 4rem 2rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .media-title {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+
+    .ruins-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      min-height: 450px;
+      margin: 3rem auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .ruins-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ruins-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      z-index: 3;
+      transition: transform 2s ease, top 2s ease;
+    }
+
+    .ruins-label.move-top {
+      top: 20px;
+      transform: translate(-50%, 0);
+    }
+
+    .text-overlay {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      color: white;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      opacity: 0;
+      transition: opacity 2s ease 2s;
+      width: 85%;
+      max-width: 700px;
+      pointer-events: none;
+    }
+
+    .text-overlay.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .media-title {
+        font-size: 2rem;
+      }
+
+      .ruins-label {
+        font-size: 1.5rem;
+        padding: 0.7rem 1.2rem;
+      }
+
+      .text-overlay {
+        font-size: 0.95rem;
+        padding: 1rem 1.2rem;
+        bottom: 80px;
+      }
+
+      .ruins-container {
+        min-height: 400px;
+      }
+    }
+  </style>
+</head>
+<body onload="animateLabelAndText()">
+  <nav class="navbar">
+    <div class="logo">Suzume</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="thesis.html">Thesis Statement ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="subthesis1.html">Grief and Memory</a></li>
+          <li><a href="subthesis2.html">Ambiguity and Pacing</a></li>
+          <li><a href="subthesis3.html">Acceptance and Healing</a></li>
+        </ul>
+      </li>
+      <li><a href="artisticmedia.html">Artistic Media</a></li>
+      <li><a href="characters.html">Characters</a></li>
+    </ul>
+  </nav>
+
+  <section class="media-section">
+    <h1 class="media-title">Artistic Media in <em>Suzume</em></h1>
+
+    <!-- Ever After -->
+    <div class="ruins-container">
+      <div class="ruins-label" id="ruinsLabel1">The Ever After</div>
+      <img src="images/everafter.png" alt="Ever After from Suzume" class="ruins-img" />
+      <div class="text-overlay" id="ruinsText1">
+        One powerful example of artistic media in <em>Suzume</em> is the depiction of Ever After, a dreamlike world filled with floating ruins and glowing doors. This surreal landscape reflects Suzume’s emotional state—unstable, yet strangely beautiful. The Ever After visually represents the space where her trauma and memories are stored, making the inner workings of grief something the audience can literally see. This artistic choice supports the thesis by transforming internal emotional struggles into vivid, external imagery, helping us understand how Suzume processes her pain.
+      </div>
+    </div>
+
+    <!-- Ruins -->
+    <div class="ruins-container">
+      <div class="ruins-label" id="ruinsLabel2">Ruins</div>
+      <img src="images/ruins.jpg" alt="Ruins from Suzume" class="ruins-img" />
+      <div class="text-overlay" id="ruinsText2">
+        Another key artistic element is the recurring use of broken and abandoned structures such as collapsed schools, forgotten homes, and overgrown ruins. These physical environments mirror the emotional ruins left by trauma and disaster. As Suzume travels through these spaces to close doors, the visuals reinforce her internal journey of mending what was lost. This supports the thesis by showing how the anime’s art direction isn’t just background, but it actively communicates themes of destruction, memory, and healing.
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function animateLabelAndText() {
+      const label1 = document.getElementById('ruinsLabel1');
+      const text1 = document.getElementById('ruinsText1');
+      const label2 = document.getElementById('ruinsLabel2');
+      const text2 = document.getElementById('ruinsText2');
+
+      setTimeout(() => {
+        label1.classList.add('move-top');
+        text1.classList.add('show');
+      }, 500);
+
+      setTimeout(() => {
+        label2.classList.add('move-top');
+        text2.classList.add('show');
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
+
