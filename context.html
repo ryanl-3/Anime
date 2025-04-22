@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Context - Suzume</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('images/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+    }
+
+    .project-info {
+      position: absolute;
+      top: 80px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 250px;
+      color: #fff;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      z-index: 1001;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 4rem 3rem 3rem 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      max-width: 700px;
+      width: 90%;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease forwards;
+      color: black;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: black;
+      animation: fadeInUp 1.3s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Suzume</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="thesis.html">Thesis Statement ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="subthesis1.html">Grief and Memory</a></li>
+          <li><a href="subthesis2.html">Ambiguity and Pacing</a></li>
+          <li><a href="subthesis3.html">Acceptance and Healing</a></li>
+          <li><a href="connection.html">Connection to Class</a></li>
+        </ul>
+      </li>
+      <li><a href="artisticmedia.html">Artistic Media</a></li>
+      <li><a href="context.html">Context</a></li>
+      <li><a href="conclusion.html">Conclusion</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Context</h1>
+      <p><em>Suzume</em> (2022), directed by Makoto Shinkai, is inspired by the real events of the 2011 Tōhoku earthquake and tsunami, one of the most powerful disasters in Japan’s history. The earthquake caused massive damage, took over 15,000 lives, and led to the Fukushima nuclear accident. In the film, Suzume loses her mother during a similar disaster, and her journey of closing mysterious doors becomes a way of facing that loss. The “Worm” that escapes through these doors represents the danger and chaos that trauma can cause if left unresolved. Through fantasy and symbolism, <em>Suzume</em> explores how people deal with grief, remember those they lost, and find the strength to move forward. The film reflects not just personal healing, but also how Japanese society continues to recover from the emotional impact of the 2011 disaster.</p>
+    </div>
+  </section>
+</body>
+</html>
